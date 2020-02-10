@@ -190,7 +190,7 @@ tools.hid_upload.path.macosx={runtime.tools.STM32Tools.path}/tools/macosx
 tools.hid_upload.path.linux={runtime.tools.STM32Tools.path}/tools/linux
 tools.hid_upload.upload.params.verbose=-d
 tools.hid_upload.upload.params.quiet=n
-tools.hid_upload.upload.pattern="{path}/{cmd}" "{build.path}/{build.project_name}.bin" {serial.port.file}                                                                                                                             
+tools.hid_upload.upload.pattern="{path}/{cmd}" "{build.path}/{build.project_name}.bin" {serial.port.file}
 
 # Upload using Maple bootloader over DFU
 tools.maple_upload.cmd=maple_upload
@@ -209,18 +209,5 @@ tools.remoteproc_gen.busybox.windows={path}/win/busybox.exe
 tools.remoteproc_gen.script=run_arduino_gen.sh
 tools.remoteproc_gen.upload.params.verbose=
 tools.remoteproc_gen.upload.params.quiet=
-tools.remoteproc_gen.upload.pattern="{busybox}" sh "{path}/{script}" generate "{build.path}/{build.project_name}.elf" "{build.path}/run_arduino_{build.project_name}.sh" 
+tools.remoteproc_gen.upload.pattern="{busybox}" sh "{path}/{script}" generate "{build.path}/{build.project_name}.elf" "{build.path}/run_arduino_{build.project_name}.sh"
 
-# Serial upload for generic STM32
-# Note: Boot0 line needs to be high on board reset to enable it
-# at the end up the upload the program is automatically run, without the board being reset
-tools.serial_upload.cmd=serial_upload
-tools.serial_upload.cmd.windows=serial_upload.bat
-tools.serial_upload.cmd.macosx=serial_upload
-tools.serial_upload.path={runtime.tools.STM32Tools.path}/tools/win
-tools.serial_upload.path.macosx={runtime.tools.STM32Tools.path}/tools/macosx
-tools.serial_upload.path.linux={runtime.tools.STM32Tools.path}/tools/linux
-tools.serial_upload.path.linux64={runtime.tools.STM32Tools.path}/tools/linux64
-tools.serial_upload.upload.params.verbose=-d
-tools.serial_upload.upload.params.quiet=n
-tools.serial_upload.upload.pattern="{path}/{cmd}" {serial.port.file} {upload.altID} {upload.usbID} "{build.path}/{build.project_name}.bin"
