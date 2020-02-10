@@ -1,0 +1,108 @@
+# See: https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5-3rd-party-Hardware-specification
+
+menu.pnum=Board part number
+
+menu.xserial=U(S)ART support
+menu.usb=USB support (if available)
+menu.xusb=USB speed (if available)
+
+menu.opt=Optimize
+menu.rtlib=C Runtime Library
+menu.upload_method=Upload method
+
+################################################################################
+# IRSB
+
+IRSB.name=IRSB
+
+IRSB.build.vid=0x0483
+IRSB.build.core=arduino
+IRSB.build.board=IRSB
+IRSB.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial}
+
+# IRSB board
+
+IRSB.upload.maximum_size=196608
+IRSB.upload.maximum_data_size=20480
+IRSB.build.mcu=cortex-m0
+IRSB.build.board=IRSB
+IRSB.build.series=STM32L0xx
+IRSB.build.product_line=STM32L082xx
+IRSB.build.variant=IRSB
+IRSB.build.cmsis_lib_gcc=arm_cortexM0l_math
+
+############# Serialx activation
+IRSB.menu.xserial.generic=Enabled (generic 'Serial')
+IRSB.menu.xserial.none=Enabled (no generic 'Serial')
+IRSB.menu.xserial.none.build.xSerial=-DHAL_UART_MODULE_ENABLED -DHWSERIAL_NONE
+IRSB.menu.xserial.disabled=Disabled (No Serial support)
+IRSB.menu.xserial.disabled.build.xSerial=
+
+
+#################### USB connectivity
+IRSB.menu.usb.none=None
+IRSB.menu.usb.CDCgen=CDC (generic 'Serial' supersede U(S)ART)
+IRSB.menu.usb.CDCgen.build.enable_usb={build.usb_flags} -DUSBD_USE_CDC
+IRSB.menu.usb.CDC=CDC (no generic 'Serial')
+IRSB.menu.usb.CDC.build.enable_usb={build.usb_flags} -DUSBD_USE_CDC -DDISABLE_GENERIC_SERIALUSB
+IRSB.menu.usb.HID=HID (keyboard and mouse)
+IRSB.menu.usb.HID.build.enable_usb={build.usb_flags} -DUSBD_USE_HID_COMPOSITE
+IRSB.menu.xusb.FS=Low/Full Speed
+IRSB.menu.xusb.HS=High Speed
+IRSB.menu.xusb.HS.build.usb_speed=-DUSE_USB_HS
+IRSB.menu.xusb.HSFS=High Speed in Full Speed mode
+IRSB.menu.xusb.HSFS.build.usb_speed=-DUSE_USB_HS -DUSE_USB_HS_IN_FS
+
+############## Optimizations
+IRSB.menu.opt.osstd=Smallest (-Os default)
+IRSB.menu.opt.oslto=Smallest (-Os) with LTO
+IRSB.menu.opt.oslto.build.flags.optimize=-Os -flto
+IRSB.menu.opt.o1std=Fast (-O1)
+IRSB.menu.opt.o1std.build.flags.optimize=-O1
+IRSB.menu.opt.o1lto=Fast (-O1) with LTO
+IRSB.menu.opt.o1lto.build.flags.optimize=-O1 -flto
+IRSB.menu.opt.o2std=Faster (-O2)
+IRSB.menu.opt.o2std.build.flags.optimize=-O2
+IRSB.menu.opt.o2lto=Faster (-O2) with LTO
+IRSB.menu.opt.o2lto.build.flags.optimize=-O2 -flto
+IRSB.menu.opt.o3std=Fastest (-O3)
+IRSB.menu.opt.o3std.build.flags.optimize=-O3
+IRSB.menu.opt.o3lto=Fastest (-O3) with LTO
+IRSB.menu.opt.o3lto.build.flags.optimize=-O3 -flto
+IRSB.menu.opt.ogstd=Debug (-g)
+IRSB.menu.opt.ogstd.build.flags.optimize=-g -Og
+
+########## C Runtime Library
+IRSB.menu.rtlib.nano=Newlib Nano (default)
+IRSB.menu.rtlib.nanofp=Newlib Nano + Float Printf
+IRSB.menu.rtlib.nanofp.build.flags.ldspecs=--specs=nano.specs -u _printf_float
+IRSB.menu.rtlib.nanofs=Newlib Nano + Float Scanf
+IRSB.menu.rtlib.nanofs.build.flags.ldspecs=--specs=nano.specs -u _scanf_float
+IRSB.menu.rtlib.nanofps=Newlib Nano + Float Printf/Scanf
+IRSB.menu.rtlib.nanofps.build.flags.ldspecs=--specs=nano.specs -u _printf_float -u _scanf_float
+IRSB.menu.rtlib.full=Newlib Standard
+IRSB.menu.rtlib.full.build.flags.ldspecs=
+
+############# Upload menu
+IRSB.menu.upload_method.serialMethod=STM32CubeProgrammer (Serial)
+IRSB.menu.upload_method.serialMethod.upload.protocol=1
+IRSB.menu.upload_method.serialMethod.upload.options={serial.port.file} -s
+IRSB.menu.upload_method.serialMethod.upload.tool=stm32CubeProg
+
+IRSB.menu.upload_method.swdMethod=STM32CubeProgrammer (SWD)
+IRSB.menu.upload_method.swdMethod.upload.protocol=0
+IRSB.menu.upload_method.swdMethod.upload.options=-g
+IRSB.menu.upload_method.swdMethod.upload.tool=stm32CubeProg
+
+IRSB.menu.upload_method.dfuMethod=STM32CubeProgrammer (DFU)
+IRSB.menu.upload_method.dfuMethod.upload.protocol=2
+IRSB.menu.upload_method.dfuMethod.upload.options=-g
+IRSB.menu.upload_method.dfuMethod.upload.tool=stm32CubeProg
+
+IRSB.menu.upload_method.MassStorage=Mass Storage
+IRSB.menu.upload_method.MassStorage.upload.protocol=
+IRSB.menu.upload_method.MassStorage.upload.tool=massStorageCopy
+
+IRSB.menu.upload_method.serialMethod=Serial
+IRSB.menu.upload_method.serialMethod.upload.protocol=maple_serial
+IRSB.menu.upload_method.serialMethod.upload.tool=serial_upload
