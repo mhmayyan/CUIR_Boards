@@ -49,21 +49,18 @@ PB_5,  //D9
 PB_6,  //D10      I2C_SCL
 PB_7,  //D11     I2C_SDA
 PA_8,  //D12 I2C3_SCL
-// PB_1,  //D13
-// PB_0,  //D14
-PC_14,  //D15
-PC_15,  //D16
-PA_7,  //D17      MOSI
-PA_6,  //D18      MISO
-PA_5,  //D19      SCK
-PA_4,  //D20      NSS
-PA_3,  //D21      RX UART2
-PA_2,  //D22      tX UART2
-PA_0,  //D23 /A0
-PA_1,  //D24 /A1
-// Duplicate for analog inputs
-PB_0,  //A2
-PB_1,  //A3
+PC_14,  //D13
+PC_15,  //D14
+PA_7,  //D15     MOSI
+PA_6,  //D16      MISO
+PA_5,  //D17      SCK
+PA_4,  //D18      NSS
+PA_3,  //D19      RX UART2
+PA_2,  //D20      tX UART2
+PA_0,  //D21 /A0
+PA_1,  //D22 /A1
+PB_0,  //D23 /A2
+PB_1,  //D24 /A3
 };
 
 #ifdef __cplusplus
