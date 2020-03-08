@@ -1,4 +1,6 @@
 # See: https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5-3rd-party-Hardware-specification
+# Modified by Mohammad Mayyan
+# March 8th, 2020
 
 menu.pnum=Board part number
 

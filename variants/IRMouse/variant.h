@@ -38,31 +38,31 @@ extern "C" {
 /*----------------------------------------------------------------------------
  *        Pins
  *----------------------------------------------------------------------------*/
-  #define PA10 0 //D0      RX UART1
-  #define PA9  1  //D1      TX UART1
-  #define PA11 2 //D2 USB_DM
-  #define PA12 3 //D3 USB_DP
-  #define PA13 4 //D4      D6_SWDIO
-  #define PA14 5 //D5      D9_SWCLK
-  #define PA15 6 //D6      RADIO_NSS    Murata internal
-  #define PB3  7 //D7
-  #define PB4  8  //D8     I2C3_SDA
-  #define PB5  9  //D9
-  #define PB6  10  //D10      I2C_SCL
-  #define PB7  11   //D11     I2C_SDA
-  #define PA8  12  //D12   I2C3_SCL
-  #define PC14 13  //D13
-  #define PC15 14  //D14
-  #define PA7  15  //D15      MOSI
-  #define PA6  16  //D16      MISO
-  #define PA5  17  //D17      SCK
-  #define PA4  18  //D18      NSS
-  #define PA3  19  //D19      RX UART2
-  #define PA2  20  //D20      tX UART2
-  #define PA0  21  //D21 /A0
-  #define PA1  22  //D22 /A1
-  #define PB0  23  //D23   A2
-  #define PB1  24  //D24   A3
+  #define PA10 0    //D0       RX UART1
+  #define PA9  1    //D1       TX UART1
+  #define PA11 2    //D2
+  #define PA12 3    //D3
+  #define PA13 4    //D4       SWDIO
+  #define PA14 5    //D5       SWCLK
+  #define PA15 6    //D6
+  #define PB3  7    //D7
+  #define PB4  8    //D8       I2C3_SDA
+  #define PB5  9    //D9
+  #define PB6  10   //D10      I2C_SCL
+  #define PB7  11   //D11      I2C_SDA
+  #define PA8  12   //D12      I2C3_SCL
+  #define PC14 13   //D13
+  #define PC15 14   //D14
+  #define PA7  15   //D15      MOSI
+  #define PA6  16   //D16      MISO
+  #define PA5  17   //D17      SCK
+  #define PA4  18   //D18      NSS
+  #define PA3  19   //D19      RX UART2
+  #define PA2  20   //D20      tX UART2
+  #define PA0  21   //D21      A0
+  #define PA1  22   //D22      A1
+  #define PB0  23   //D23      A2
+  #define PB1  24   //D24      A3
 
 
 

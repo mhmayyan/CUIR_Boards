@@ -26,6 +26,10 @@
 * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *******************************************************************************
+*
+* Modified by Mohammad Mayyan
+* March 8th, 2020
+*
 */
 
 #include "pins_arduino.h"
@@ -38,29 +42,29 @@ extern "C" {
   const PinName digitalPin[] = {
     PA_10, //D0      RX UART1
     PA_9,  //D1      TX UART1
-    PA_11, //D2 USB_DM
-    PA_12, //D3 USB_DP
-    PA_13, //D4      D6_SWDIO
-    PA_14, //D5      D9_SWCLK
+    PA_11, //D2
+    PA_12, //D3
+    PA_13, //D4      SWDIO
+    PA_14, //D5      SWCLK
     PA_15, //D6
     PB_3,  //D7
-    PB_4,  //D8     I2C3_SDA
+    PB_4,  //D8      I2C3_SDA
     PB_5,  //D9
-    PB_6,  //D10      I2C_SCL
+    PB_6,  //D10     I2C_SCL
     PB_7,  //D11     I2C_SDA
-    PA_8,  //D12 I2C3_SCL
+    PA_8,  //D12     I2C3_SCL
     PC_14, //D13
     PC_15, //D14
-    PA_7,  //D15      MOSI
-    PA_6,  //D16      MISO
-    PA_5,  //D17      SCK
-    PA_4,  //D18      NSS
-    PA_3,  //D19      RX UART2
-    PA_2,  //D20      tX UART2
-    PA_1,  //D21      RX UART4
-    PA_0,  //D22      tX UART4
-    PB_0,  //D23 /A0
-    PB_1,  //D24 /A1
+    PA_7,  //D15     MOSI
+    PA_6,  //D16     MISO
+    PA_5,  //D17     SCK
+    PA_4,  //D18     NSS
+    PA_3,  //D19     RX UART2
+    PA_2,  //D20     tX UART2
+    PA_1,  //D21     RX UART4
+    PA_0,  //D22     tX UART4
+    PB_0,  //D23     A0
+    PB_1,  //D24     A1
   };
 
   #ifdef __cplusplus
@@ -91,19 +95,19 @@ extern "C" {
     //   /* Initializes the CPU, AHB and APB busses clocks */
     //   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
     //   RCC_OscInitStruct.HSIState = RCC_HSI_DIV4;//RCC_HSI_ON;
-    //   RCC_OscInitStruct.HSICalibrationValue = 16;
-    //   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
-    //   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
-    //   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLLMUL_4;
-    //   RCC_OscInitStruct.PLL.PLLDIV = RCC_PLLDIV_4;//RCC_PLLDIV_2;
+    //   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+    //   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_OFF;
+    ////   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
+    ////   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLLMUL_4;
+    ////   RCC_OscInitStruct.PLL.PLLDIV = RCC_PLLDIV_4;//RCC_PLLDIV_2;
 
 
     // 16MHz is working
     /* Initializes the CPU, AHB and APB busses clocks */
     RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
-    RCC_OscInitStruct.HSIState = RCC_HSI_ON;//RCC_HSI_ON;
-    RCC_OscInitStruct.HSICalibrationValue = 16;
-    RCC_OscInitStruct.PLL.PLLState = RCC_PLL_OFF;//RCC_PLL_ON;
+    RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+    RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+    RCC_OscInitStruct.PLL.PLLState = RCC_PLL_OFF;
     // RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
     // RCC_OscInitStruct.PLL.PLLMUL = RCC_PLLMUL_4;
     // RCC_OscInitStruct.PLL.PLLDIV = RCC_PLLDIV_4;//RCC_PLLDIV_2;
@@ -123,7 +127,7 @@ extern "C" {
     //   /* Initializes the CPU, AHB and APB busses clocks */
     //   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK
     //                                 | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
-    //   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+    //   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
     //   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
     //   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
     //   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
