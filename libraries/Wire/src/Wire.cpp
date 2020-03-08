@@ -514,4 +514,11 @@ inline void TwoWire::resetTxBuffer(void)
 
 // Preinstantiate Objects //////////////////////////////////////////////////////
 
-TwoWire Wire = TwoWire(); //D14-D15
+// TwoWire Wire = TwoWire(); //D14-D15
+#if defined(ARDUINO_IRSB_V0) || defined(ARDUINO_IR_MOUSE_V0)
+////TwoWire(uint8_t sda, uint8_t scl);
+TwoWire Wire(PB7, PB6);
+TwoWire Wire3(PB4, PA8);
+#else
+TwoWire Wire = TwoWire();
+#endif

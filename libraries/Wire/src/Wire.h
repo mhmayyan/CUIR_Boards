@@ -131,4 +131,8 @@ class TwoWire : public Stream {
 
 extern TwoWire Wire;
 
+#if defined(ARDUINO_IRSB_V0) || defined(ARDUINO_IR_MOUSE_V0)
+extern TwoWire Wire3;
+#endif
+
 #endif

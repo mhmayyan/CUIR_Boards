@@ -2,9 +2,9 @@
 
 menu.pnum=Board part number
 
-#menu.xserial=U(S)ART support
-#menu.usb=USB support (if available)
-#menu.xusb=USB speed (if available)
+menu.xserial=U(S)ART support
+menu.usb=USB support (if available)
+menu.xusb=USB speed (if available)
 
 menu.opt=Optimize
 menu.rtlib=C Runtime Library
@@ -18,8 +18,7 @@ IRSB.name=IRSB (The Sensor Board)
 IRSB.build.vid=0x0483
 IRSB.build.core=arduino
 IRSB.build.board=IRSB
-#IRSB.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial} -DARDUINO_IRSB_V0 -DHAVE_HWSERIAL2 -DHAVE_HWSERIAL4
-IRSB.build.extra_flags=-D{build.product_line} {build.xSerial} -DARDUINO_IRSB_V0 -DHAVE_HWSERIAL2 -DHAVE_HWSERIAL4
+IRSB.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial} -DARDUINO_IRSB_V0 -DHAVE_HWSERIAL2 -DHAVE_HWSERIAL4
 
 # IRSB board
 
@@ -33,26 +32,26 @@ IRSB.build.variant=IRSB
 IRSB.build.cmsis_lib_gcc=arm_cortexM0l_math
 
 ############# Serialx activation
-#IRSB.menu.xserial.generic=Enabled (generic 'Serial')
-#IRSB.menu.xserial.none=Enabled (no generic 'Serial')
-#IRSB.menu.xserial.none.build.xSerial=-DHAL_UART_MODULE_ENABLED -DHWSERIAL_NONE
-#IRSB.menu.xserial.disabled=Disabled (No Serial support)
-#IRSB.menu.xserial.disabled.build.xSerial=
+IRSB.menu.xserial.generic=Enabled (generic 'Serial')
+IRSB.menu.xserial.none=Enabled (no generic 'Serial')
+IRSB.menu.xserial.none.build.xSerial=-DHAL_UART_MODULE_ENABLED -DHWSERIAL_NONE
+IRSB.menu.xserial.disabled=Disabled (No Serial support)
+IRSB.menu.xserial.disabled.build.xSerial=
 
 
 #################### USB connectivity
-#IRSB.menu.usb.none=None
-#IRSB.menu.usb.CDCgen=CDC (generic 'Serial' supersede U(S)ART)
-#IRSB.menu.usb.CDCgen.build.enable_usb={build.usb_flags} -DUSBD_USE_CDC
-#IRSB.menu.usb.CDC=CDC (no generic 'Serial')
-#IRSB.menu.usb.CDC.build.enable_usb={build.usb_flags} -DUSBD_USE_CDC -DDISABLE_GENERIC_SERIALUSB
-#IRSB.menu.usb.HID=HID (keyboard and mouse)
-#IRSB.menu.usb.HID.build.enable_usb={build.usb_flags} -DUSBD_USE_HID_COMPOSITE
-#IRSB.menu.xusb.FS=Low/Full Speed
-#IRSB.menu.xusb.HS=High Speed
-#IRSB.menu.xusb.HS.build.usb_speed=-DUSE_USB_HS
-#IRSB.menu.xusb.HSFS=High Speed in Full Speed mode
-#IRSB.menu.xusb.HSFS.build.usb_speed=-DUSE_USB_HS -DUSE_USB_HS_IN_FS
+IRSB.menu.usb.none=None
+IRSB.menu.usb.CDCgen=CDC (generic 'Serial' supersede U(S)ART)
+IRSB.menu.usb.CDCgen.build.enable_usb={build.usb_flags} -DUSBD_USE_CDC
+IRSB.menu.usb.CDC=CDC (no generic 'Serial')
+IRSB.menu.usb.CDC.build.enable_usb={build.usb_flags} -DUSBD_USE_CDC -DDISABLE_GENERIC_SERIALUSB
+IRSB.menu.usb.HID=HID (keyboard and mouse)
+IRSB.menu.usb.HID.build.enable_usb={build.usb_flags} -DUSBD_USE_HID_COMPOSITE
+IRSB.menu.xusb.FS=Low/Full Speed
+IRSB.menu.xusb.HS=High Speed
+IRSB.menu.xusb.HS.build.usb_speed=-DUSE_USB_HS
+IRSB.menu.xusb.HSFS=High Speed in Full Speed mode
+IRSB.menu.xusb.HSFS.build.usb_speed=-DUSE_USB_HS -DUSE_USB_HS_IN_FS
 
 ############## Optimizations
 IRSB.menu.opt.osstd=Smallest (-Os default)
@@ -112,8 +111,7 @@ IRMouse.name=IRMouse (The Mouse Board)
 IRMouse.build.vid=0x0483
 IRMouse.build.core=arduino
 IRMouse.build.board=IRMouse
-#IRMouse.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial} -DARDUINO_IR_MOUSE_V0 -DHAVE_HWSERIAL2
-IRMouse.build.extra_flags=-D{build.product_line} {build.xSerial} -DARDUINO_IR_MOUSE_V0 -DHAVE_HWSERIAL2
+IRMouse.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial} -DARDUINO_IR_MOUSE_V0 -DHAVE_HWSERIAL2
 
 # IRMouse board
 
@@ -127,26 +125,26 @@ IRMouse.build.variant=IRMouse
 IRMouse.build.cmsis_lib_gcc=arm_cortexM0l_math
 
 ############# Serialx activation
-#IRMouse.menu.xserial.generic=Enabled (generic 'Serial')
-#IRMouse.menu.xserial.none=Enabled (no generic 'Serial')
-#IRMouse.menu.xserial.none.build.xSerial=-DHAL_UART_MODULE_ENABLED -DHWSERIAL_NONE
-#IRMouse.menu.xserial.disabled=Disabled (No Serial support)
-#IRMouse.menu.xserial.disabled.build.xSerial=
+IRMouse.menu.xserial.generic=Enabled (generic 'Serial')
+IRMouse.menu.xserial.none=Enabled (no generic 'Serial')
+IRMouse.menu.xserial.none.build.xSerial=-DHAL_UART_MODULE_ENABLED -DHWSERIAL_NONE
+IRMouse.menu.xserial.disabled=Disabled (No Serial support)
+IRMouse.menu.xserial.disabled.build.xSerial=
 
 
 #################### USB connectivity
-#IRMouse.menu.usb.none=None
-#IRMouse.menu.usb.CDCgen=CDC (generic 'Serial' supersede U(S)ART)
-#IRMouse.menu.usb.CDCgen.build.enable_usb={build.usb_flags} -DUSBD_USE_CDC
-#IRMouse.menu.usb.CDC=CDC (no generic 'Serial')
-#IRMouse.menu.usb.CDC.build.enable_usb={build.usb_flags} -DUSBD_USE_CDC -DDISABLE_GENERIC_SERIALUSB
-#IRMouse.menu.usb.HID=HID (keyboard and mouse)
-#IRMouse.menu.usb.HID.build.enable_usb={build.usb_flags} -DUSBD_USE_HID_COMPOSITE
-#IRMouse.menu.xusb.FS=Low/Full Speed
-#IRMouse.menu.xusb.HS=High Speed
-#IRMouse.menu.xusb.HS.build.usb_speed=-DUSE_USB_HS
-#IRMouse.menu.xusb.HSFS=High Speed in Full Speed mode
-#IRMouse.menu.xusb.HSFS.build.usb_speed=-DUSE_USB_HS -DUSE_USB_HS_IN_FS
+IRMouse.menu.usb.none=None
+IRMouse.menu.usb.CDCgen=CDC (generic 'Serial' supersede U(S)ART)
+IRMouse.menu.usb.CDCgen.build.enable_usb={build.usb_flags} -DUSBD_USE_CDC
+IRMouse.menu.usb.CDC=CDC (no generic 'Serial')
+IRMouse.menu.usb.CDC.build.enable_usb={build.usb_flags} -DUSBD_USE_CDC -DDISABLE_GENERIC_SERIALUSB
+IRMouse.menu.usb.HID=HID (keyboard and mouse)
+IRMouse.menu.usb.HID.build.enable_usb={build.usb_flags} -DUSBD_USE_HID_COMPOSITE
+IRMouse.menu.xusb.FS=Low/Full Speed
+IRMouse.menu.xusb.HS=High Speed
+IRMouse.menu.xusb.HS.build.usb_speed=-DUSE_USB_HS
+IRMouse.menu.xusb.HSFS=High Speed in Full Speed mode
+IRMouse.menu.xusb.HSFS.build.usb_speed=-DUSE_USB_HS -DUSE_USB_HS_IN_FS
 
 ############## Optimizations
 IRMouse.menu.opt.osstd=Smallest (-Os default)
