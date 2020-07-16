@@ -25,7 +25,6 @@ setSDA	KEYWORD2
 #######################################
 
 Wire	KEYWORD2
-Wire3	KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
