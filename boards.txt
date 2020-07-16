@@ -12,6 +12,8 @@ menu.opt=Optimize
 menu.rtlib=C Runtime Library
 menu.upload_method=Upload method
 
+menu.show_serial_prints=Show Debugging Serial Prints
+
 ################################################################################
 # IRSB
 
@@ -20,11 +22,9 @@ IRSB.name=IRSB (The Sensor Board)
 IRSB.build.vid=0x0483
 IRSB.build.core=arduino
 IRSB.build.board=IRSB
-#IRSB.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial} -DARDUINO_IRSB_V0 -DHAVE_HWSERIAL2 -DHAVE_HWSERIAL4
-IRSB.build.extra_flags=-D{build.product_line} {build.xSerial} -DARDUINO_IRSB_V0 -DHAVE_HWSERIAL2 -DHAVE_HWSERIAL4
+IRSB.build.extra_flags=-D{build.product_line} {build.xSerial} -DARDUINO_IRSB_V0 -DENABLE_HWSERIAL2 -DENABLE_HWSERIAL4 {build.show_serial_prints_flags}
 
 # IRSB board
-
 IRSB.upload.maximum_size=196608
 IRSB.upload.maximum_data_size=20480
 IRSB.build.mcu=cortex-m0
@@ -106,6 +106,12 @@ IRSB.menu.upload_method.MassStorage=Mass Storage
 IRSB.menu.upload_method.MassStorage.upload.protocol=
 IRSB.menu.upload_method.MassStorage.upload.tool=massStorageCopy
 
+# menu.show_serial_prints
+IRSB.menu.show_serial_prints.yes= Yes
+IRSB.menu.show_serial_prints.no= No
+IRSB.menu.show_serial_prints.yes.build.show_serial_prints_flags=-DSHOW_ME_SERIAL_PRINTS=1
+IRSB.menu.show_serial_prints.no.build.show_serial_prints_flags=
+
 ################################################################################
 # IRMouse
 
@@ -114,8 +120,7 @@ IRMouse.name=IRMouse (The Mouse Board)
 IRMouse.build.vid=0x0483
 IRMouse.build.core=arduino
 IRMouse.build.board=IRMouse
-#IRMouse.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial} -DARDUINO_IR_MOUSE_V0 -DHAVE_HWSERIAL2
-IRMouse.build.extra_flags=-D{build.product_line} {build.xSerial} -DARDUINO_IR_MOUSE_V0 -DHAVE_HWSERIAL2
+IRMouse.build.extra_flags=-D{build.product_line} {build.xSerial} -DARDUINO_IR_MOUSE_V0 -DHAVE_HWSERIAL2 {build.show_serial_prints_flags}
 
 # IRMouse board
 
@@ -199,3 +204,9 @@ IRMouse.menu.upload_method.dfuMethod.upload.tool=stm32CubeProg
 IRMouse.menu.upload_method.MassStorage=Mass Storage
 IRMouse.menu.upload_method.MassStorage.upload.protocol=
 IRMouse.menu.upload_method.MassStorage.upload.tool=massStorageCopy
+
+# menu.show_serial_prints
+IRMouse.menu.show_serial_prints.yes= Yes
+IRMouse.menu.show_serial_prints.no= No
+IRMouse.menu.show_serial_prints.yes.build.show_serial_prints_flags=-DSHOW_ME_SERIAL_PRINTS=1
+IRMouse.menu.show_serial_prints.no.build.show_serial_prints_flags=

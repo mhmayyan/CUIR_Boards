@@ -35,6 +35,8 @@
 extern "C" {
 #endif // __cplusplus
 
+
+#define FLASH_BASE_ADDRESS	0x08080000UL // to use the real EEPROM
 /*----------------------------------------------------------------------------
  *        Pins
  *----------------------------------------------------------------------------*/
@@ -59,7 +61,7 @@ extern "C" {
   #define PA4  18   //D18      NSS
   #define PA3  19   //D19      RX UART2
   #define PA2  20   //D20      tX UART2
-  #define PA0  21   //D21      A0
+  #define PA0  21   //D21      A0	WKUP1
   #define PA1  22   //D22      A1
   #define PB0  23   //D23      A2
   #define PB1  24   //D24      A3
