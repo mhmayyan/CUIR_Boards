@@ -7,3 +7,5 @@ https://github.com/mhmayyan/General/raw/master/package_cuir_index.json
 
 
 [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) must be downloaded and installed for flashing. Make sure to include it to the environment path.
+
+[Installation instructions](https://wiki.st.com/stm32mpu/wiki/STM32CubeProgrammer)
