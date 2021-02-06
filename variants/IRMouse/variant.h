@@ -96,7 +96,7 @@ extern "C" {
 #define I2C3_SCL  PA8  //D12
 
 // On-board user button
-// #define USER_BTN                PC13
+#define USER_BTN                14
 
 // Timer Definitions
 // Use TIM6/TIM7 when possible as servo and tone don't need GPIO output pin

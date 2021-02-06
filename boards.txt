@@ -12,7 +12,10 @@ menu.opt=Optimize
 menu.rtlib=C Runtime Library
 menu.upload_method=Upload method
 
+menu.sysclk=System clock
+
 menu.show_serial_prints=Show Debugging Serial Prints
+menu.smplIntrvl=Sampling Interval
 
 ################################################################################
 # IRSB
@@ -22,7 +25,7 @@ IRSB.name=IRSB (The Sensor Board)
 IRSB.build.vid=0x0483
 IRSB.build.core=arduino
 IRSB.build.board=IRSB
-IRSB.build.extra_flags=-D{build.product_line} {build.xSerial} -DARDUINO_IRSB_V0 -DENABLE_HWSERIAL2 -DENABLE_HWSERIAL4 {build.show_serial_prints_flags}
+IRSB.build.extra_flags=-D{build.product_line} {build.xSerial} -DARDUINO_IRSB_V0 -DENABLE_HWSERIAL2 -DENABLE_HWSERIAL4 {build.show_serial_prints_flags} {build.sysclk_flags}
 
 # IRSB board
 IRSB.upload.maximum_size=196608
@@ -112,6 +115,15 @@ IRSB.menu.show_serial_prints.no= No
 IRSB.menu.show_serial_prints.yes.build.show_serial_prints_flags=-DSHOW_ME_SERIAL_PRINTS=1
 IRSB.menu.show_serial_prints.no.build.show_serial_prints_flags=
 
+#
+# menu.sysclk
+IRSB.menu.sysclk.hsi16m=16 MHz
+IRSB.menu.sysclk.hsi4m=4 MHz
+IRSB.menu.sysclk.msi2097k=2.097 MHz
+IRSB.menu.sysclk.hsi16m.build.sysclk_flags=-DCATENA_CFG_SYSCLK=16
+IRSB.menu.sysclk.hsi4m.build.sysclk_flags=-DCATENA_CFG_SYSCLK=4
+IRSB.menu.sysclk.msi2097k.build.sysclk_flags=-DCATENA_CFG_SYSCLK=2
+
 ################################################################################
 # IRMouse
 
@@ -120,7 +132,7 @@ IRMouse.name=IRMouse (The Mouse Board)
 IRMouse.build.vid=0x0483
 IRMouse.build.core=arduino
 IRMouse.build.board=IRMouse
-IRMouse.build.extra_flags=-D{build.product_line} {build.xSerial} -DARDUINO_IR_MOUSE_V0 -DHAVE_HWSERIAL2 {build.show_serial_prints_flags}
+IRMouse.build.extra_flags=-D{build.product_line} {build.xSerial} -DARDUINO_IR_MOUSE_V0 -DHAVE_HWSERIAL2 {build.show_serial_prints_flags} {build.sysclk_flags} {build.sampling_interval}
 
 # IRMouse board
 
@@ -210,3 +222,26 @@ IRMouse.menu.show_serial_prints.yes= Yes
 IRMouse.menu.show_serial_prints.no= No
 IRMouse.menu.show_serial_prints.yes.build.show_serial_prints_flags=-DSHOW_ME_SERIAL_PRINTS=1
 IRMouse.menu.show_serial_prints.no.build.show_serial_prints_flags=
+
+# menu.sysclk
+IRMouse.menu.sysclk.hsi16m=16 MHz
+IRMouse.menu.sysclk.hsi4m=4 MHz
+IRMouse.menu.sysclk.msi2097k=2.097 MHz
+IRMouse.menu.sysclk.hsi16m.build.sysclk_flags=-DCATENA_CFG_SYSCLK=16
+IRMouse.menu.sysclk.hsi4m.build.sysclk_flags=-DCATENA_CFG_SYSCLK=4
+IRMouse.menu.sysclk.msi2097k.build.sysclk_flags=-DCATENA_CFG_SYSCLK=2
+
+# menu.smplIntrvl
+IRMouse.menu.smplIntrvl.minutes_5=5 minutes
+IRMouse.menu.smplIntrvl.minutes_1=1 minute
+IRMouse.menu.smplIntrvl.minutes_3=3 minutes
+IRMouse.menu.smplIntrvl.minutes_10=10 minutes
+IRMouse.menu.smplIntrvl.minutes_15=15 minutes
+IRMouse.menu.smplIntrvl.minutes_20=20 minutes
+
+IRMouse.menu.smplIntrvl.minutes_5.build.sampling_interval=-DDEFAULT_SAMPLING_TIME=5
+IRMouse.menu.smplIntrvl.minutes_1.build.sampling_interval=-DDEFAULT_SAMPLING_TIME=1
+IRMouse.menu.smplIntrvl.minutes_3.build.sampling_interval=-DDEFAULT_SAMPLING_TIME=3
+IRMouse.menu.smplIntrvl.minutes_10.build.sampling_interval=-DDEFAULT_SAMPLING_TIME=10
+IRMouse.menu.smplIntrvl.minutes_15.build.sampling_interval=-DDEFAULT_SAMPLING_TIME=15
+IRMouse.menu.smplIntrvl.minutes_20.build.sampling_interval=-DDEFAULT_SAMPLING_TIME=20
