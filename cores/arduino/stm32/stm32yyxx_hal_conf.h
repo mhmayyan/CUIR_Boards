@@ -12,6 +12,8 @@
 #define HAL_PWR_MODULE_ENABLED
 #define HAL_RCC_MODULE_ENABLED
 
+#define HAL_CRC_MODULE_ENABLED
+
 /*
  * Optional HAL modules, can be enabled/disabled using
  * variant.h, build_opt.h or hal_conf_extra.h
